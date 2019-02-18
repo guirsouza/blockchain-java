@@ -1,7 +1,6 @@
 package org.guirsouza.blockchain;
 
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Block {
   private Integer index;
@@ -15,8 +14,6 @@ public class Block {
     this.data = data;
     this.previousHash = previousHash;
     this.timeStamp = System.currentTimeMillis();
-    this.hash = calculateHash(); //Making sure we do this after we set the other values.
-
     mine();
   }
 
@@ -38,6 +35,12 @@ public class Block {
     return this.hash;
   }
 
+  public Integer getIndex() {
+    return this.index;
+  }
 
+  public String getPreviousHash() {
+    return this.previousHash;
+  }
 
 }
